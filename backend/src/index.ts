@@ -1,4 +1,3 @@
-import { BADRESP } from "dns/promises";
 import express, { Express, Request, Response } from "express";
 import fs from "fs";
 import path from "path";
@@ -16,44 +15,12 @@ type Person = {
     country: string;
 }
 
-const people: Person[] = [
-	{
-		id: 1,
-		name: "Lucas Lima",
-		street: "Rua das Palmeiras",
-		city: "Santos",
-		country: "Brasil",
-	},
-	{
-		id: 2,
-		name: "Bruno Mendes",
-		street: "Avenida Central",
-		city: "Campinas",
-		country: "Brasil",
-	},
-	{
-		id: 3,
-		name: "Paula Alves",
-		street: "Rua do Porto",
-		city: "Manaus",
-		country: "Brasil",
-	},
-	{
-		id: 4,
-		name: "Felipe Nunes",
-		street: "Rua das Laranjeiras",
-		city: "Fortaleza",
-		country: "Brasil",
-	},
-	{
-		id: 5,
-		name: "Ana Borges",
-		street: "Avenida Rio Verde",
-		city: "Goiania",
-		country: "Brasil",
-	},
-];
+const loadPeople = (): Person[] => {
+    const data = fs.readFileSync(path.join(__dirname, 'people.json'), 'utf8');
+    return JSON.parse(data);
+  };
 
+let people = loadPeople()
 
 
 app.get("/", (req: Request, res: Response) => {
@@ -75,5 +42,5 @@ app.get("/people/:id", (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`)
+    console.log(`Server is running at http://localhost:${port}`);
 })
