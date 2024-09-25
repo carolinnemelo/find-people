@@ -1,3 +1,4 @@
+import { BADRESP } from "dns/promises";
 import express, { Express, Request, Response } from "express";
 import fs from "fs";
 import path from "path";
@@ -63,6 +64,13 @@ app.get("/people", (req, res) => {
 	res
         .status(200)
         .json(people);
+});
+
+app.get("/people/:id", (req, res) => {
+	const id: number = Number(req.params.id);
+	const person = people.find((e) => e.id == id);
+
+    return person ? res.status(200).json(person) : res.status(404).end();
 });
 
 
