@@ -57,6 +57,9 @@ app.post("/people", (req, res) => {
 
 	people.push(newPerson);
 
+    fs.writeFileSync(path.join(__dirname, 'people.json'), JSON.stringify(people, null, 2));
+
+
 	res.status(201).send(`${name} is added to database`);
 });
 

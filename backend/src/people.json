@@ -1,37 +1,44 @@
 [
-	{
-		"id": 1,
-		"name": "Lucas Lima",
-		"street": "Rua das Palmeiras",
-		"city": "Santos",
-		"country": "Brasil"
-	},
-	{
-		"id": 2,
-		"name": "Bruno Mendes",
-		"street": "Avenida Central",
-		"city": "Campinas",
-		"country": "Brasil"
-	},
-	{
-		"id": 3,
-		"name": "Paula Alves",
-		"street": "Rua do Porto",
-		"city": "Manaus",
-		"country": "Brasil"
-	},
-	{
-		"id": 4,
-		"name": "Felipe Nunes",
-		"street": "Rua das Laranjeiras",
-		"city": "Fortaleza",
-		"country": "Brasil"
-	},
-	{
-		"id": 5,
-		"name": "Ana Borges",
-		"street": "Avenida Rio Verde",
-		"city": "Goiania",
-		"country": "Brasil"
-	}
+  {
+    "id": 1,
+    "name": "Lucas Lima",
+    "street": "Rua das Palmeiras",
+    "city": "Santos",
+    "country": "Brasil"
+  },
+  {
+    "id": 2,
+    "name": "Bruno Mendes",
+    "street": "Avenida Central",
+    "city": "Campinas",
+    "country": "Brasil"
+  },
+  {
+    "id": 3,
+    "name": "Paula Alves",
+    "street": "Rua do Porto",
+    "city": "Manaus",
+    "country": "Brasil"
+  },
+  {
+    "id": 4,
+    "name": "Felipe Nunes",
+    "street": "Rua das Laranjeiras",
+    "city": "Fortaleza",
+    "country": "Brasil"
+  },
+  {
+    "id": 5,
+    "name": "Ana Borges",
+    "street": "Avenida Rio Verde",
+    "city": "Goiania",
+    "country": "Brasil"
+  },
+  {
+    "id": 6,
+    "name": "Carlos Souza",
+    "street": "Rua Nova",
+    "city": "Recife",
+    "country": "Brasil"
+  }
 ]
