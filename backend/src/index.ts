@@ -91,6 +91,23 @@ app.patch("/people/:id", (req, res) => {
 	res.status(200).json(person);
 });
 
+app.delete("/people/:id", (req, res) => {
+	const id: number = Number(req.params.id);
+	const person = people.find((e) => e.id === id);
+
+    if(!person) {
+        res.status(404).send(`${person} not found`);
+        return;
+    }
+
+    people.splice(people.indexOf(person), 1);
+
+	fs.writeFileSync(
+		path.join(__dirname, "people.json"),
+		JSON.stringify(people, null, 2)
+	);
+	res.status(200).json(`${person} was deleted`);
+}); 
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
