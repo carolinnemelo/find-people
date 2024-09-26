@@ -40,6 +40,26 @@ app.get("/people/:id", (req, res) => {
     return person ? res.status(200).json(person) : res.status(404).end();
 });
 
+app.post("/people", (req, res) => {
+	const { name, street, city, country } = req.body;
+
+	if (!name || !street || !city || !country) {
+		res.status(400).send("Missing information");
+	}
+
+	const newPerson: Person = {
+		id: people.length + 1,
+		name,
+		street,
+		city,
+		country,
+	};
+
+	people.push(newPerson);
+
+	res.status(201).send(`${name} is added to database`);
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
